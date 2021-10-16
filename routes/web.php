@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SimulationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::resource(name: 'simulation', controller: SimulationController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
